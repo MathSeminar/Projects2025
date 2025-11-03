@@ -1,0 +1,1034 @@
+/* ============================================
+   VARIABLES DE COLOR IJR
+   ============================================ */
+:root {
+    /* Colores principales */
+    --color-primary: #538594;      /* Blue-gray */
+    --color-secondary: #468660;    /* Green */
+    --color-accent: #8D584D;       /* Reddish-brown */
+    
+    /* Colores de fondo */
+    --color-bg-light: #FFFFFF;     /* White */
+    --color-bg-soft: #DBE2E5;      /* Light blue-gray */
+    --color-bg-alt: #F3F2F2;       /* Off-white */
+    --color-bg-subtle: #E9E9E9;    /* Light gray */
+    
+    /* Colores de texto y bordes */
+    --color-text-dark: #333333;    /* Dark gray */
+    --color-text-medium: #A1A7A5;  /* Medium gray */
+    --color-border: #DBE2E5;       /* Light blue-gray */
+    
+    /* Colores de estado */
+    --color-success: #468660;      /* Green */
+    --color-success-light: #DBE2E5; /* Light blue-gray with green tint */
+    --color-danger: #8D584D;       /* Reddish-brown */
+    
+    /* Sombras mejoradas */
+    --shadow-sm: 0 2px 8px rgba(83, 133, 148, 0.12);
+    --shadow-md: 0 4px 16px rgba(83, 133, 148, 0.18);
+    --shadow-lg: 0 10px 40px rgba(83, 133, 148, 0.25);
+    --shadow-xl: 0 20px 60px rgba(83, 133, 148, 0.3);
+}
+
+/* ============================================
+   RESET BÁSICO Y CONTROL DE OVERFLOW
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   BODY Y CONTENEDOR PRINCIPAL
+   ============================================ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Efecto para valores calculados */
+.coef-input.calculated {
+    animation: pulse 0.6s ease;
+}
+
+/* ============================================
+   BOTÓN DE CAMBIO DE IDIOMA
+   ============================================ */
+
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.language-toggle:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.language-toggle:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: var(--color-text-dark);
+}
+
+.lang-btn:hover {
+    background-color: rgba(83, 133, 148, 0.1);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+
+h1 {
+    text-align: center;
+    color: var(--color-text-dark);
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* ============================================
+   SECCIÓN DE INTEGRANTES CON LOGO
+   ============================================ */
+
+.integrantes {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    border: 2px solid var(--color-primary);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+.integrantes:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.logo-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.school-logo {
+    width: 70px;
+    height: auto;
+    display: block;
+}
+
+.names-info {
+    flex: 1;
+    text-align: left;
+}
+
+.names-info p {
+    margin: 4px 0;
+    color: var(--color-text-dark);
+}
+
+.names-info strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.student-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.year {
+    font-size: 13px;
+    color: var(--color-text-medium);
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* ============================================
+   INSTRUCCIONES
+   ============================================ */
+
+.instrucciones {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.instrucciones p {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.instrucciones strong {
+    font-size: 17px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   FÓRMULA DE LA ECUACIÓN
+   ============================================ */
+
+.formula-container {
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg-subtle) 100%);
+    padding: 40px 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.formula-label {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.label-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.equation-structure {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formula-visual {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-height: 80px;
+}
+
+.formula-text {
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1;
+}
+
+.coef-input {
+    width: 90px;
+    height: 70px;
+    padding: 8px;
+    border: 3px solid var(--color-border);
+    border-radius: 10px;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    box-shadow: var(--shadow-sm);
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.coef-input.coef-a {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.coef-input.coef-b {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.coef-input.coef-c {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.coef-input::placeholder {
+    color: var(--color-text-medium);
+    font-weight: 500;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.coef-input:focus {
+    outline: none;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.coef-input.coef-a:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(83, 133, 148, 0.15);
+    background-color: rgba(83, 133, 148, 0.05);
+}
+
+.coef-input.coef-b:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 4px rgba(70, 134, 96, 0.15);
+    background-color: rgba(70, 134, 96, 0.05);
+}
+
+.coef-input.coef-c:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(141, 88, 77, 0.15);
+    background-color: rgba(141, 88, 77, 0.05);
+}
+
+.coef-input:not(:placeholder-shown) {
+    font-weight: 700;
+    border-width: 3px;
+}
+
+.coef-input:hover {
+    box-shadow: var(--shadow-md);
+    transform: scale(1.02);
+}
+
+/* ============================================
+   CONTENEDOR DE RESULTADOS
+   ============================================ */
+
+.resultado-container {
+    background: linear-gradient(135deg, var(--color-bg-soft) 0%, var(--color-bg-alt) 100%);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-border);
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.resultado-container.mostrar {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 0.4s ease;
+}
+
+.resultado-container h2 {
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#resultado-texto {
+    background: var(--color-bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.discriminante-info {
+    font-size: 20px;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(83, 133, 148, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.discriminante-info strong {
+    color: var(--color-primary);
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.discriminante-valor {
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--color-primary);
+    display: block;
+    margin: 10px 0;
+}
+
+.discriminante-significado {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-top: 8px;
+}
+
+.solucion-info {
+    font-size: 24px;
+    color: var(--color-text-dark);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.8;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.solucion-info strong {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+/* Valores con colores diferenciadores */
+.valor-a {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.valor-b {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.valor-c {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.valor-x1, .valor-x2, .valor-x {
+    color: var(--color-text-dark);
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.dos-soluciones {
+    background: linear-gradient(135deg, rgba(70, 134, 96, 0.15) 0%, rgba(70, 134, 96, 0.05) 100%);
+    border: 2px solid var(--color-success);
+}
+
+.dos-soluciones strong {
+    color: var(--color-success);
+}
+
+.una-solucion {
+    background: linear-gradient(135deg, rgba(83, 133, 148, 0.15) 0%, rgba(83, 133, 148, 0.05) 100%);
+    border: 2px solid var(--color-primary);
+}
+
+.una-solucion strong {
+    color: var(--color-primary);
+}
+
+.sin-soluciones {
+    background: linear-gradient(135deg, rgba(141, 88, 77, 0.15) 0%, rgba(141, 88, 77, 0.05) 100%);
+    border: 2px solid var(--color-accent);
+}
+
+.sin-soluciones strong {
+    color: var(--color-accent);
+}
+
+.error-mensaje {
+    background: linear-gradient(135deg, rgba(141, 88, 77, 0.2) 0%, rgba(141, 88, 77, 0.1) 100%);
+    border: 2px solid var(--color-danger);
+    color: var(--color-text-dark);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.error-mensaje strong {
+    color: var(--color-danger);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.calcular-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+}
+
+.calcular-btn:hover {
+    background-color: #3a7050;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(70, 134, 96, 0.3);
+}
+
+.calcular-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background-color: var(--color-accent);
+    color: var(--color-bg-light);
+}
+
+.reset-btn:hover {
+    background-color: #754a41;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(141, 88, 77, 0.3);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* Botón Volver al Índice */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #A1A7A5, #7a8080);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #538594, #3d6a78);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .calcular-btn,
+    .reset-btn,
+    .back-btn {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+    
+    .container {
+        padding: 50px 12px 20px 12px;
+        max-width: 100%;
+        width: calc(100% - 16px);
+    }
+    
+    .language-toggle {
+        top: 8px;
+        right: 8px;
+        padding: 6px 12px;
+        font-size: 11px;
+        gap: 4px;
+    }
+    
+    h1 {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .integrantes {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 8px;
+        margin-bottom: 15px;
+        gap: 12px;
+    }
+    
+    .names-info {
+        text-align: center;
+    }
+    
+    .school-logo {
+        width: 45px;
+    }
+    
+    .names-info strong {
+        font-size: 13px;
+    }
+    
+    .student-name {
+        font-size: 11px;
+    }
+    
+    .year {
+        font-size: 10px;
+    }
+    
+    .instrucciones {
+        padding: 12px 10px;
+        margin-bottom: 15px;
+    }
+    
+    .instrucciones p {
+        font-size: 10px;
+        line-height: 1.4;
+        margin: 3px 0;
+    }
+    
+    .instrucciones strong {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    .formula-container {
+        padding: 25px 15px;
+        overflow-x: auto;
+    }
+    
+    .formula-label {
+        margin-bottom: 15px;
+    }
+    
+    .label-text {
+        font-size: 14px;
+    }
+    
+    .equation-structure {
+        font-size: 20px;
+    }
+    
+    .formula-visual {
+        gap: 4px;
+        min-height: 60px;
+    }
+    
+    .formula-text {
+        font-size: 28px;
+    }
+    
+    .coef-input {
+        width: 60px;
+        height: 50px;
+        font-size: 22px;
+        border-width: 2px;
+    }
+    
+    button {
+        padding: 12px 20px;
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .resultado-container h2 {
+        font-size: 18px;
+    }
+    
+    .discriminante-info {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .discriminante-info strong {
+        font-size: 18px;
+    }
+    
+    .discriminante-valor {
+        font-size: 22px;
+    }
+    
+    .discriminante-significado {
+        font-size: 15px;
+    }
+    
+    .solucion-info {
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    .solucion-info strong {
+        font-size: 17px;
+    }
+    
+    .valor-x1, .valor-x2, .valor-x {
+        font-size: 24px;
+    }
+}
+
+/* iPhone XR y similares (414px) */
+@media (max-width: 420px) {
+    body {
+        padding: 6px;
+    }
+    
+    .container {
+        padding: 45px 10px 18px 10px;
+        width: calc(100% - 12px);
+        border-radius: 18px;
+    }
+    
+    .language-toggle {
+        top: 6px;
+        right: 6px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    
+    .formula-container {
+        padding: 20px 10px;
+    }
+    
+    .formula-label {
+        margin-bottom: 12px;
+    }
+    
+    .label-text {
+        font-size: 13px;
+    }
+    
+    .equation-structure {
+        font-size: 18px;
+    }
+    
+    .formula-text {
+        font-size: 24px;
+    }
+    
+    .coef-input {
+        width: 55px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* Pantallas muy pequeñas (iPhone SE, etc) */
+@media (max-width: 375px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        padding: 42px 8px 15px 8px;
+        width: calc(100% - 10px);
+        border-radius: 16px;
+    }
+    
+    .language-toggle {
+        top: 5px;
+        right: 5px;
+        padding: 4px 8px;
+        font-size: 9px;
+        gap: 3px;
+    }
+    
+    h1 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .school-logo {
+        width: 38px;
+    }
+    
+    .integrantes {
+        padding: 10px 6px;
+        gap: 10px;
+    }
+    
+    .names-info strong {
+        font-size: 12px;
+    }
+    
+    .student-name {
+        font-size: 10px;
+    }
+    
+    .year {
+        font-size: 9px;
+    }
+    
+    .instrucciones {
+        padding: 10px 8px;
+    }
+    
+    .instrucciones p {
+        font-size: 9px;
+    }
+    
+    .instrucciones strong {
+        font-size: 11px;
+    }
+    
+    .formula-container {
+        padding: 18px 8px;
+    }
+    
+    .formula-label {
+        margin-bottom: 10px;
+    }
+    
+    .label-text {
+        font-size: 12px;
+    }
+    
+    .equation-structure {
+        font-size: 16px;
+    }
+    
+    .formula-text {
+        font-size: 20px;
+    }
+    
+    .coef-input {
+        width: 50px;
+        height: 40px;
+        font-size: 18px;
+        padding: 4px;
+    }
+    
+    button {
+        padding: 11px 18px;
+        font-size: 12px;
+    }
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .input-group label {
+        border: 2px solid var(--color-text-dark);
+    }
+    
+    button {
+        border: 2px solid transparent;
+    }
+    
+    button:focus {
+        border-color: var(--color-text-dark);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    button,
+    .language-toggle {
+        display: none;
+    }
+}

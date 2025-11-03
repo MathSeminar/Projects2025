@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de conversión de unidades">
+    <meta name="author" content="Estudiantes">
+    <title data-es="Calculadora de Conversión de Unidades" data-en="Unit Conversion Calculator">Calculadora de Conversión de Unidades</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="stylesConverter.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botones de idioma -->
+        <div class="language-toggle">
+            <button class="lang-btn active" data-lang="es" onclick="cambiarIdioma('es')">ES</button>
+            <button class="lang-btn" data-lang="en" onclick="cambiarIdioma('en')">EN</button>
+        </div>
+        
+        <!-- Título -->
+        <h1 data-es="Calculadora de Conversión de Unidades" data-en="Unit Conversion Calculator">
+            Calculadora de Conversión de Unidades
+        </h1>
+        
+        <!-- Información de integrantes -->
+        <div class="integrantes">
+            <div class="logo-container">
+                <img src="../../imas/LogoColegio.png" alt="School Logo" class="school-logo">
+            </div>
+            <div class="names-info">
+                <p><strong data-es="Desarrollado por:" data-en="Developed by:">Desarrollado por:</strong></p>
+                <p class="student-name">Camila Fernández Ramírez</p>
+                <p class="student-name">Jerónimo Jiménez Agudelo</p>
+                <p class="student-name">Maria Antonia Valencia Ospina</p>
+                <p class="year">2025</p>
+            </div>
+        </div>
+        
+        <!-- Instrucciones -->
+        <div class="instrucciones">
+            <p><strong data-es="Instrucciones:" data-en="Instructions:">Instrucciones:</strong></p>
+            <p data-es="Ingrese el valor numérico que desea convertir." 
+               data-en="Enter the numeric value you want to convert.">
+                Ingrese el valor numérico que desea convertir.
+            </p>
+            <p data-es="Seleccione el tipo de conversión que necesita realizar." 
+               data-en="Select the type of conversion you need to perform.">
+                Seleccione el tipo de conversión que necesita realizar.
+            </p>
+            <p data-es="Presione el botón 'Convertir' para obtener el resultado." 
+               data-en="Press the 'Convert' button to get the result.">
+                Presione el botón 'Convertir' para obtener el resultado.
+            </p>
+        </div>
+        
+        <!-- Formulario -->
+        <form id="formularioConversion">
+            <!-- Valor a convertir -->
+            <div class="input-section">
+                <label for="valor" data-es="Valor a convertir:" data-en="Value to convert:">
+                    Valor a convertir:
+                </label>
+                <input type="text" 
+                       id="valor" 
+                       name="valor" 
+                       inputmode="decimal"
+                       pattern="[0-9]*\.?[0-9]+"
+                       required
+                       data-es-placeholder="100"
+                       data-en-placeholder="100"
+                       placeholder="100">
+            </div>
+            
+            <!-- Tipo de conversión -->
+            <div class="input-section">
+                <label for="tipo" data-es="Tipo de conversión:" data-en="Conversion type:">
+                    Tipo de conversión:
+                </label>
+                <select id="tipo" name="tipo">
+                    <option value="cm_m" data-es="Centímetros → Metros" data-en="Centimeters → Meters">Centímetros → Metros</option>
+                    <option value="m_cm" data-es="Metros → Centímetros" data-en="Meters → Centimeters">Metros → Centímetros</option>
+                    <option value="kg_g" data-es="Kilogramos → Gramos" data-en="Kilograms → Grams">Kilogramos → Gramos</option>
+                    <option value="g_kg" data-es="Gramos → Kilogramos" data-en="Grams → Kilograms">Gramos → Kilogramos</option>
+                    <option value="km_m" data-es="Kilómetros → Metros" data-en="Kilometers → Meters">Kilómetros → Metros</option>
+                    <option value="m_km" data-es="Metros → Kilómetros" data-en="Meters → Kilometers">Metros → Kilómetros</option>
+                </select>
+            </div>
+            
+            <!-- Botones -->
+            <div class="button-container">
+                <button type="submit" class="calcular-btn"
+                        data-es="Convertir" data-en="Convert">
+                    Convertir
+                </button>
+                <button type="button" class="reset-btn" onclick="limpiar()"
+                        data-es="Limpiar Todo" data-en="Clear All">
+                    Limpiar Todo
+                </button>
+                <a href="../../index.html" class="back-btn" 
+                    data-es="Volver al Inicio" data-en="Back to Index">
+                    Volver al Inicio
+                </a>
+            </div>
+        </form>
+        
+        <!-- Área de resultado -->
+        <div id="resultado"></div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="converter.js"></script>
+</body>
+</html>
