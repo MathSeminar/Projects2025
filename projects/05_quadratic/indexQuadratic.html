@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Calculadora de ecuaciones cuadráticas ax² + bx + c = 0">
+    <meta name="author" content="Estudiantes">
+    <title data-es="Calculadora Cuadrática" data-en="Quadratic Calculator">Calculadora Cuadrática</title>
+    
+    <!-- Aquí importo los estilos -->
+    <link rel="stylesheet" href="stylesQuadratic.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botones para los lenguajes -->
+        <div class="language-toggle">
+            <button class="lang-btn active" data-lang="es" onclick="cambiarIdioma('es')">ES</button>
+            <button class="lang-btn" data-lang="en" onclick="cambiarIdioma('en')">EN</button>
+        </div>
+      
+        <h1 data-es="Calculadora de Ecuaciones Cuadráticas" data-en="Quadratic Equation Calculator">
+            Calculadora de Ecuaciones Cuadráticas
+        </h1>
+        
+        <div class="integrantes">
+            <div class="logo-container">
+                <img src="../../imas/LogoColegio.png" alt="School Logo" class="school-logo">
+            </div>
+            <div class="names-info">
+                <p><strong data-es="Desarrollado por:" data-en="Developed by:">Desarrollado por:</strong></p>
+                <p class="student-name">Emmanuel Acevedo Bernal</p>
+                <p class="student-name">Simón Orozco Patiño</p>
+                <p class="student-name">Simón Valencia Londoño</p>
+                <p class="year">2025</p>
+            </div>
+        </div>
+        
+        <div class="instrucciones">
+            <p><strong data-es="Instrucciones:" data-en="Instructions:">Instrucciones:</strong></p>
+            <p data-es="Ingrese los valores de los coeficientes a, b y c de la ecuación cuadrática" 
+               data-en="Enter the values of coefficients a, b and c of the quadratic equation">
+                Ingrese los valores de los coeficientes a, b y c de la ecuación cuadrática
+            </p>
+            <p data-es="La ecuación debe tener la forma: ax² + bx + c = 0" 
+               data-en="The equation must have the form: ax² + bx + c = 0">
+                La ecuación debe tener la forma: ax² + bx + c = 0
+            </p>
+            <p data-es="El programa calculará las soluciones automáticamente" 
+               data-en="The program will calculate the solutions automatically">
+                El programa calculará las soluciones automáticamente
+            </p>
+        </div>
+        
+        <!-- Fórmula de la ecuación con inputs integrados -->
+        <div class="formula-container">
+            <!-- Label de la ecuación -->
+            <div class="formula-label">
+                <span class="label-text" data-es="Ecuación Cuadrática:" data-en="Quadratic Equation:">Ecuación Cuadrática:</span>
+                <span class="equation-structure">ax² + bx + c = 0</span>
+            </div>
+            
+            <div class="formula-visual">
+                <input 
+                    type="text" 
+                    id="coef-a" 
+                    name="coef-a" 
+                    class="coef-input coef-a"
+                    placeholder="a"
+                    inputmode="decimal"
+                    data-es-placeholder="a"
+                    data-en-placeholder="a">
+                <span class="formula-text">x²</span>
+                <span class="formula-text">+</span>
+                <input 
+                    type="text" 
+                    id="coef-b" 
+                    name="coef-b" 
+                    class="coef-input coef-b"
+                    placeholder="b"
+                    inputmode="decimal"
+                    data-es-placeholder="b"
+                    data-en-placeholder="b">
+                <span class="formula-text">x</span>
+                <span class="formula-text">+</span>
+                <input 
+                    type="text" 
+                    id="coef-c" 
+                    name="coef-c" 
+                    class="coef-input coef-c"
+                    placeholder="c"
+                    inputmode="decimal"
+                    data-es-placeholder="c"
+                    data-en-placeholder="c">
+                <span class="formula-text">= 0</span>
+            </div>
+        </div>
+        
+        <!-- Área de resultados -->
+        <div class="resultado-container" id="resultado-container">
+            <h2 data-es="Resultados:" data-en="Results:">Resultados:</h2>
+            <div id="resultado-texto"></div>
+        </div>
+        
+        <!-- Botones-->
+        <div class="button-container">
+            <button class="calcular-btn" onclick="calcular()" 
+                    data-es="Resolver Ecuación" data-en="Solve Equation">
+                Resolver Ecuación
+            </button>
+            <button class="reset-btn" onclick="limpiar()"
+                    data-es="Limpiar Todo" data-en="Clear All">
+                Limpiar Todo
+            </button>
+            <a href="../../index.html" class="back-btn" 
+                data-es="Volver al Inicio" data-en="Back to Index">
+                Volver al Inicio
+            </a>
+        </div>
+    </div>
+    
+    <!-- Aquí importo el js -->
+    <script src="Quadratic.js"></script>
+</body>
+</html>

@@ -1,0 +1,919 @@
+/* ============================================
+   VARIABLES DE COLOR IJR
+   ============================================ */
+:root {
+    /* Colores principales */
+    --color-primary: #538594;      /* Blue-gray */
+    --color-secondary: #468660;    /* Green */
+    --color-accent: #8D584D;       /* Reddish-brown */
+    
+    /* Colores de fondo */
+    --color-bg-light: #FFFFFF;     /* White */
+    --color-bg-soft: #DBE2E5;      /* Light blue-gray */
+    --color-bg-alt: #F3F2F2;       /* Off-white */
+    --color-bg-subtle: #E9E9E9;    /* Light gray */
+    
+    /* Colores de texto y bordes */
+    --color-text-dark: #333333;    /* Dark gray */
+    --color-text-medium: #A1A7A5;  /* Medium gray */
+    --color-border: #DBE2E5;       /* Light blue-gray */
+    
+    /* Colores de estado */
+    --color-success: #468660;      /* Green */
+    --color-success-light: #DBE2E5; /* Light blue-gray with green tint */
+    --color-danger: #8D584D;       /* Reddish-brown */
+    
+    /* Sombras mejoradas */
+    --shadow-sm: 0 2px 8px rgba(83, 133, 148, 0.12);
+    --shadow-md: 0 4px 16px rgba(83, 133, 148, 0.18);
+    --shadow-lg: 0 10px 40px rgba(83, 133, 148, 0.25);
+    --shadow-xl: 0 20px 60px rgba(83, 133, 148, 0.3);
+}
+
+/* ============================================
+   RESET BÁSICO Y CONTROL DE OVERFLOW
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   BODY Y CONTENEDOR PRINCIPAL
+   ============================================ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease;
+}
+
+/* ============================================
+   BOTÓN DE CAMBIO DE IDIOMA
+   ============================================ */
+
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.language-toggle:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.language-toggle:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.lang-icon {
+    font-size: 18px;
+}
+
+#lang-text {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Soporte para botones antiguos de idioma */
+.lang-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: var(--color-text-dark);
+}
+
+.lang-btn:hover {
+    background-color: rgba(83, 133, 148, 0.1);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+
+h1 {
+    text-align: center;
+    color: var(--color-text-dark);
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* ============================================
+   SECCIÓN DE INTEGRANTES CON LOGO
+   ============================================ */
+
+.integrantes {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    border: 2px solid var(--color-primary);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+.integrantes:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.logo-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.school-logo {
+    width: 70px;
+    height: auto;
+    display: block;
+}
+
+.names-info {
+    flex: 1;
+    text-align: left;
+}
+
+.names-info p {
+    margin: 4px 0;
+    color: var(--color-text-dark);
+}
+
+.names-info strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.student-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.year {
+    font-size: 13px;
+    color: var(--color-text-medium);
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* ============================================
+   INSTRUCCIONES
+   ============================================ */
+
+.instrucciones {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.instrucciones p {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.instrucciones strong {
+    font-size: 17px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   CONTENEDOR DEL TRIÁNGULO
+   ============================================ */
+
+.triangle-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 80px 60px;
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg-subtle) 100%);
+    border-radius: 20px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.triangle-image {
+    width: 90%;
+    height: auto;
+    margin-left: 11%;
+    display: block;
+    opacity: 0.95;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* ============================================
+   CAMPOS DE ENTRADA
+   ============================================ */
+
+.input-field {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-field label {
+    font-weight: 700;
+    color: var(--color-text-dark);
+    font-size: 14px;
+    white-space: nowrap;
+    background-color: var(--color-bg-light);
+    padding: 8px 14px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.input-field label:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.input-field input {
+    width: 100px;
+    padding: 12px 14px;
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Estados del input */
+.input-field input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 4px rgba(70, 134, 96, 0.15);
+    transform: scale(1.05);
+    background-color: rgba(70, 134, 96, 0.05);
+}
+
+.input-field input:not(:placeholder-shown) {
+    background: linear-gradient(135deg, rgba(70, 134, 96, 0.1) 0%, rgba(70, 134, 96, 0.05) 100%);
+    border-color: var(--color-success);
+    font-weight: 700;
+}
+
+.input-field input::placeholder {
+    color: var(--color-text-medium);
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+.input-field input:hover {
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   POSICIONAMIENTO DE CAMPOS ESPECÍFICOS
+   ============================================ */
+
+/* Ángulo - esquina inferior izquierda */
+.angulo-field {
+    bottom: 18%;
+    left: 0.8%;
+}
+
+/*  adyacente - parte inferior central */
+.adyacente-field {
+    bottom: 10%;
+    left: 46%;
+    transform: translateX(-50%);
+}
+
+/*  opuesto - lado derecho */
+.opuesto-field {
+    right: 0.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: row-reverse;
+}
+
+/* Hipotenusa - parte superior diagonal */
+.hipotenusa-field {
+    top: 40%;
+    left: 35%;
+    transform: translateX(-50%);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    font-family: inherit;
+    letter-spacing: 0.3px;
+}
+
+/* Botón calcular */
+.calcular-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-light);
+}
+
+.calcular-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.calcular-btn:active {
+    transform: translateY(0);
+}
+
+/* Botón limpiar */
+.reset-btn {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #7a4a42 100%);
+    color: var(--color-bg-light);
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* Botón Volver al Índice */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #A1A7A5, #7a8080);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #538594, #3d6a78);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .calcular-btn,
+    .reset-btn,
+    .back-btn {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes pulse {
+    0% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.08); 
+    }
+    100% { 
+        transform: scale(1); 
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.calculated {
+    animation: pulse 0.6s ease;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+    
+    .container {
+        padding: 50px 12px 20px 12px; /* Más espacio arriba para el botón de idioma */
+        max-width: 100%;
+        width: calc(100% - 16px); /* Considera el padding del body */
+    }
+    
+    /*Botón de idioma en móvil */
+    .language-toggle {
+        top: 8px;
+        right: 8px;
+        padding: 6px 12px;
+        font-size: 11px;
+        gap: 4px;
+    }
+    
+    .lang-icon {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .integrantes {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 8px;
+        margin-bottom: 15px;
+        gap: 12px;
+    }
+    
+    .names-info {
+        text-align: center;
+    }
+    
+    .school-logo {
+        width: 45px;
+    }
+    
+    .names-info strong {
+        font-size: 13px;
+    }
+    
+    .student-name {
+        font-size: 11px;
+    }
+    
+    .year {
+        font-size: 10px;
+    }
+    
+    .instrucciones {
+        padding: 12px 10px;
+        margin-bottom: 15px;
+    }
+    
+    .instrucciones p {
+        font-size: 10px;
+        line-height: 1.4;
+        margin: 3px 0;
+    }
+    
+    .instrucciones strong {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    /*Container del triángulo */
+    .triangle-container {
+        padding: 30px 12px;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    
+    .triangle-image {
+        width: 92%;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-left: 10%;
+        display: block;
+    }
+    
+    .input-field {
+        gap: 2px;
+    }
+    
+    /* Tamaño de inputs en móvil */
+    .input-field input {
+        width: 40px;
+        font-size: 10px;
+        padding: 5px 4px;
+        border-width: 1px;
+    }
+    
+    .input-field label {
+        font-size: 9px;
+        padding: 4px 6px;
+        border-width: 1px;
+    }
+    
+    /* Posicionamiento de campos en móvil */
+    .angulo-field {
+        bottom: 13%;
+        left: 9%;
+    }
+    
+    .adyacente-field {
+        bottom: 5%;
+        left: 46%;
+    }
+    
+    .opuesto-field {
+        right: 9%;
+        top: 50%;
+    }
+    
+    .hipotenusa-field {
+        top: 42%;
+        left: 40%;
+    }
+    
+    button {
+        padding: 12px 20px;
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+/* iPhone XR y similares (414px) */
+@media (max-width: 420px) {
+    body {
+        padding: 6px;
+    }
+    
+    .container {
+        padding: 45px 10px 18px 10px;
+        width: calc(100% - 12px);
+        border-radius: 18px;
+    }
+    
+    .language-toggle {
+        top: 6px;
+        right: 6px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    
+    .triangle-container {
+        padding: 25px 10px;
+    }
+    
+    .triangle-image {
+        width: 90%;
+    }
+    
+    .input-field input {
+        width: 50px;
+        font-size: 9px;
+        padding: 4px 3px;
+    }
+    
+    .input-field label {
+        font-size: 8px;
+        padding: 3px 5px;
+    }
+    
+    .angulo-field {
+        bottom: 15%;
+        left: 1%;
+    }
+    
+    .adyacente-field {
+        bottom: 6%;
+        left: 45%;
+    }
+    
+    .opuesto-field {
+        right: -1%;
+        top: 49%;
+    }
+    
+    .hipotenusa-field {
+        top: 38%;
+        left: 30%;
+    }
+}
+
+/* Pantallas muy, muy pequeñas (iPhone SE, etc) */
+@media (max-width: 375px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        padding: 42px 8px 15px 8px;
+        width: calc(100% - 10px);
+        border-radius: 16px;
+    }
+    
+    .language-toggle {
+        top: 5px;
+        right: 5px;
+        padding: 4px 8px;
+        font-size: 9px;
+        gap: 3px;
+    }
+    
+    .lang-icon {
+        font-size: 12px;
+    }
+    
+    h1 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .school-logo {
+        width: 38px;
+    }
+    
+    .integrantes {
+        padding: 10px 6px;
+        gap: 10px;
+    }
+    
+    .names-info strong {
+        font-size: 12px;
+    }
+    
+    .student-name {
+        font-size: 10px;
+    }
+    
+    .year {
+        font-size: 9px;
+    }
+    
+    .instrucciones {
+        padding: 10px 8px;
+    }
+    
+    .instrucciones p {
+        font-size: 9px;
+    }
+    
+    .instrucciones strong {
+        font-size: 11px;
+    }
+    
+    .triangle-container {
+        padding: 22px 8px;
+    }
+    
+    .triangle-image {
+        width: 88%;
+    }
+    
+    .input-field input {
+        width: 48px;
+        font-size: 9px;
+        padding: 4px 2px;
+    }
+    
+    .input-field label {
+        font-size: 8px;
+        padding: 3px 4px;
+    }
+    
+    .angulo-field {
+        bottom: 14%;
+        left: -1%;
+    }
+    
+    .adyacente-field {
+        bottom: 5%;
+        left: 44%;
+    }
+    
+    .opuesto-field {
+        right: -1%;
+        top: 48%;
+    }
+    
+    .hipotenusa-field {
+        top: 37%;
+        left: 28%;
+    }
+    
+    button {
+        padding: 11px 18px;
+        font-size: 12px;
+    }
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 3px solid var(--color-bg-soft);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .input-field label {
+        border: 2px solid var(--color-text-dark);
+    }
+    
+    button {
+        border: 2px solid transparent;
+    }
+    
+    button:focus {
+        border-color: var(--color-text-dark);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    button,
+    .language-toggle {
+        display: none;
+    }
+}

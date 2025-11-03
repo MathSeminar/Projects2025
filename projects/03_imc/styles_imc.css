@@ -1,0 +1,435 @@
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #538594 0%, #468660 100%);
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+
+.container {
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* ============================================
+   BOTONES DE IDIOMA
+   ============================================ */
+
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    background: #DBE2E5;
+    padding: 4px;
+    border-radius: 20px;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+    background: transparent;
+    color: #538594;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background: #538594;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #538594;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-right: 100px;
+}
+
+/* ============================================
+   SECCIÓN DE INTEGRANTES
+   ============================================ */
+
+.integrantes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #F3F2F2;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.school-logo {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.names-info {
+    flex: 1;
+}
+
+.names-info p {
+    margin: 4px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.names-info strong {
+    color: #538594;
+    font-size: 16px;
+}
+
+.student-name {
+    font-weight: 500;
+    color: #468660;
+}
+
+.year {
+    font-weight: 600;
+    color: #A1A7A5;
+    font-size: 12px;
+}
+
+/* ============================================
+   INSTRUCCIONES
+   ============================================ */
+
+.instrucciones {
+    background: #DBE2E5;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.instrucciones p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.instrucciones strong {
+    color: #538594;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   TARJETA DE FORMULARIO
+   ============================================ */
+
+.card {
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #DBE2E5;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #538594;
+    margin: 16px 0 8px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid #DBE2E5;
+    font-size: 15px;
+    background: #F3F2F2;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+select:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #538594;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(83, 133, 148, 0.1);
+}
+
+select:hover,
+input[type="number"]:hover {
+    border-color: #468660;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.row input[type="number"] {
+    flex: 1;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.button-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calcular-btn {
+    background: #468660;
+    color: #FFFFFF;
+}
+
+.calcular-btn:hover {
+    background: #3a6f50;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(70, 134, 96, 0.3);
+}
+
+.calcular-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background: #8D584D;
+    color: #FFFFFF;
+}
+
+.reset-btn:hover {
+    background: #764a41;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(141, 88, 77, 0.3);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* Botón Volver al Índice */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #A1A7A5, #7a8080);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #538594, #3d6a78);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .calcular-btn,
+    .reset-btn,
+    .back-btn {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   RESULTADO
+   ============================================ */
+
+.result {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #DBE2E5 0%, #E9E9E9 100%);
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.result strong {
+    color: #538594;
+    font-size: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.note {
+    font-size: 13px;
+    color: #468660;
+    margin-top: 12px;
+    padding: 12px;
+    background: #F3F2F2;
+    border-radius: 8px;
+    border-left: 4px solid #468660;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    font-size: 12px;
+    color: #A1A7A5;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+.calculated {
+    animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        border-color: #DBE2E5;
+    }
+    50% {
+        transform: scale(1.05);
+        border-color: #468660;
+        box-shadow: 0 0 0 4px rgba(70, 134, 96, 0.2);
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 22px;
+        padding-right: 80px;
+    }
+
+    .language-toggle {
+        top: 15px;
+        right: 15px;
+    }
+
+    .integrantes {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .school-logo {
+        width: 60px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}

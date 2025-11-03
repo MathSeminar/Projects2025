@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Calculadora de Índice de Masa Corporal (IMC)">
+    <meta name="author" content="Estudiante">
+    <title data-es="Calculadora de IMC" data-en="BMI Calculator">Calculadora de IMC</title>
+    
+    <!-- Importar estilos -->
+    <link rel="stylesheet" href="styles_imc.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botones para los lenguajes -->
+        <div class="language-toggle">
+            <button class="lang-btn active" data-lang="es" onclick="cambiarIdioma('es')">ES</button>
+            <button class="lang-btn" data-lang="en" onclick="cambiarIdioma('en')">EN</button>
+        </div>
+      
+        <h1 data-es="Calculadora de IMC" data-en="BMI Calculator">
+            Calculadora de IMC
+        </h1>
+        
+        <div class="integrantes">
+            <div class="logo-container">
+                <img src="../../imas/LogoColegio.png" alt="School Logo" class="school-logo">
+            </div>
+            <div class="names-info">
+                <p><strong data-es="Desarrollado por:" data-en="Developed by:">Desarrollado por:</strong></p>
+                <p class="student-name">Jerónimo Alzate Villegas</p>
+                <p class="student-name">Juan José Castro López</p>
+                <p class="student-name">Tomás Pérez Vélez</p>
+                <p class="year">2025</p>
+            </div>
+        </div>
+        
+        <div class="instrucciones">
+            <p><strong data-es="Instrucciones:" data-en="Instructions:">Instrucciones:</strong></p>
+            <p data-es="Seleccione el sistema de unidades (métrico o imperial)." 
+               data-en="Select the unit system (metric or imperial).">
+                Seleccione el sistema de unidades (métrico o imperial).
+            </p>
+            <p data-es="Ingrese su peso y altura." 
+               data-en="Enter your weight and height.">
+                Ingrese su peso y altura.
+            </p>
+            <p data-es="Presione Calcular IMC para obtener el resultado." 
+               data-en="Press Calculate BMI to get the result.">
+                Presione 'Calcular IMC' para obtener el resultado.
+            </p>
+        </div>
+
+        <div class="card">
+            <label for="unit" data-es="Unidades" data-en="Units">Unidades</label>
+            <select id="unit">
+                <option value="metric" data-es="Métrico (kg, m)" data-en="Metric (kg, m)">Métrico (kg, m)</option>
+                <option value="imperial" data-es="Imperial (lb, in)" data-en="Imperial (lb, in)">Imperial (lb, in)</option>
+            </select>
+
+            <label for="peso" data-es="Peso" data-en="Weight">Peso</label>
+            <input id="peso" type="number" step="any" min="0" placeholder="Ej: 78">
+
+            <label for="altura" data-es="Altura" data-en="Height">Altura</label>
+            <div class="row">
+                <input id="altura" type="number" step="any" min="0" placeholder="Ej: 1.84">
+            </div>
+
+            <div class="button-container">
+                <button class="calcular-btn" id="calcular" 
+                        data-es="Calcular IMC" data-en="Calculate BMI">
+                    Calcular IMC
+                </button>
+                <button class="reset-btn" id="limpiar"
+                        data-es="Limpiar Todo" data-en="Clear All">
+                    Limpiar Todo
+                </button>
+                <a href="../../index.html" class="back-btn" 
+                    data-es="Volver al Inicio" data-en="Back to Index">
+                    Volver al Inicio
+                </a>
+            </div>
+
+            <div id="output" class="result" style="display:none;"></div>
+            <div id="advice" class="note"></div>
+        </div>
+
+        <footer data-es="Introduce datos reales. Este cálculo es únicamente orientativo, consulta a tu médico de confianza." 
+                data-en="Enter real data. This calculation is for guidance only.">
+            Introduce datos reales. Este cálculo es únicamente orientativo, consulta a tu médico de confianza.
+        </footer>
+    </div>
+    
+    <!-- Importar JavaScript -->
+    <script src="calc_imc.js"></script>
+</body>
+</html>
